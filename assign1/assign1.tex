@@ -1,0 +1,47 @@
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+\title{Assignment 1}
+\author{Nitin Gangahar}
+\date{February 2013}
+\maketitle
+
+\section*{Question 1}
+
+\begin{equation}
+	A_N = 1 + \frac{2}{N} \sum_{j=1}^{N} A_{j-1}  for N > 0
+\end{equation}
+
+Multiplying both sides by N gives
+\begin{equation}
+	NA_N = N + 2 \sum_{j=1}^{N} A_{j-1} for N > 0
+\end{equation}
+
+This holds for N-1 as
+\begin{equation}
+	(N-1)A_{N-1} = (N-1) + 2\sum_{j=1}^{N-1} A_{j-1} for N > 1 
+\end{equation}
+
+Subtracting the last two
+\begin{equation}
+	NA_N = 1 + (N+1)A_{N-1}
+\end{equation}
+
+Dividing both sides by $N(N+1)$ gives
+\begin{equation}
+	\frac{A_N}{N+1} = \frac{1}{N(N+1)} + \frac{A_{N-1}}{N}
+\end{equation}
+
+Iterating
+\begin{equation}
+	\frac{A_N}{N+1} = \sum_{k=2}^{N}\frac{1}{k(k+1)} + \frac{A_1}{2}
+\end{equation}
+
+Assuming $A_0 = 0$ as mentioned in the errata and solving the equation gives
+
+\centerline{\fbox{$A_N = N$}}
+
+\newpage
+\section*{Question 2}
+Let's assume our pivot is the $x+1^{th}$ smallest element in the array of N numbers after it is partitioned. Hence, there will be x-1
+\end{document}
