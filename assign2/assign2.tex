@@ -1,0 +1,89 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+\title{Assignment 2}
+\author{Nitin Gangahar}
+\date{February 2013}
+\maketitle
+
+\section*{2.17}
+	Rearranging coefficients we have
+	\begin{equation}
+		A_N = A_{N-1}(1-\frac{4}{N}-\frac{2}{N}) + 2
+	\end{equation}
+	Multiplying both sides by N
+	\begin{equation}
+		N A_N = A_{N-1} (N-6) + 2N
+	\end{equation}
+
+	The factor to divide would be 
+	\centerline{\fbox{
+		$\frac{6.5.4\ldots1}{N.(N-1)\ldots(N-5)}$
+	}}
+
+	Assume $N>6$ and applying the theorem given in Chapter 2, we get
+	\begin{equation}
+		A_N = 2 + \sum_{j>=6}^{j<N} 2 \times \frac{j-5}{j+1} \times \frac{j-4}{j+2} \times \ldots \times \frac{N-6}{N}
+	\end{equation}
+
+	This can be changed to
+	\begin{equation*}
+		A_N = 2 + 2 \sum_{j>=6}^{j<N} \frac{j! \times (n-6)!}{n! \times (j-6)!}
+	\end{equation*}
+
+	Multiplying and dividing by $6!$ inside the sum gives
+	\begin{equation}
+		A_N = 2 [ 1 + \sum_{j>=6}^{j<N} \frac{\binom{j}{6}}{\binom{N}{6}} ]
+	\end{equation}
+
+	Looking up wikipedia for binomial coefficients gives us the following equation which can be used
+	\begin{equation}
+		\sum_{m=0}^{n} \binom{m}{k} = \binom{n+1}{k+1}
+	\end{equation}
+
+	This gives
+	\begin{equation}
+		A_N = 2 \frac{\binom{N+1}{7}}{\binom{N}{6}}
+	\end{equation}
+
+	Which gives the final closed recurrence
+	\centerline{
+		\fbox{
+			$A_N = 2\frac{N+1}{7}$
+		}
+	}
+	We can solve the initial cases $N<=6$ manually
+	$\square$
+\section*{2.69}
+	Solved in the forums. The solution I was getting was not specific enough. 
+\section*{3.20}
+	We have the following
+	\begin{equation}
+		a_n = 3a_{n-1} - 3a_{n-2} + a_{n-3} n>2 \text{and} a_0 = a_1 = 0 a_2 = 1
+	\end{equation}
+
+	First set of initial conditions and using usual method of GF gives
+	\centerline{\fbox{$A_N = \binom{N}{2}$}}
+	for $ N >= 2 $
+	Second condition when used along with backward convolution can be solved and the result varies from the previous result. Hence, the initial conditions make a huge difference. 
+	\centerline{\fbox{$a_n = \frac{n(3-n)}{2}$}}
+	$\square$
+\section*{3.28}
+	By expanding with taylor series and differentiating both sides and also using the following property
+	\fbox{$\frac{d(a^x)}{dx} = (ln a)a^x$}	we get
+	\begin{equation*}
+		\text{Required coefficient}(R) = \binom{\alpha+k-1}{k} \left( \frac{1}{\alpha} + \frac{1}{\alpha + 1} + \ldots + \frac{1}{\alpha + k -1} \right)
+	\end{equation*}
+	and substituting $\alpha = \frac{1}{2}$
+	\begin{equation*}
+		R = \frac{k-\frac{1}{2})!}{k!} \left( 2 + \frac{2}{3} + \ldots + \frac{2}{2k-1} \right)
+	\end{equation*}
+
+	The term $\frac{k-\frac{1}{2}!}{k!}$ can be solved to give $\frac{1}{4^n}\binom{2n}{n}$
+
+\end{document} 
+
+
+
+
