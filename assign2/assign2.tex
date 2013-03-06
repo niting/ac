@@ -77,10 +77,17 @@
 	\end{equation*}
 	and substituting $\alpha = \frac{1}{2}$
 	\begin{equation*}
-		R = \frac{k-\frac{1}{2})!}{k!} \left( 2 + \frac{2}{3} + \ldots + \frac{2}{2k-1} \right)
+		R = \frac{(k-\frac{1}{2})!}{k!} \left( 2 + \frac{2}{3} + \ldots + \frac{2}{2k-1} \right)
 	\end{equation*}
 
 	The term $\frac{k-\frac{1}{2}!}{k!}$ can be solved to give $\frac{1}{4^n}\binom{2n}{n}$
+	Also the series inside can be evaluated to give the final answer for $R$ as
+
+	\fbox{
+		$
+			R = \frac{1}{4^n} \binom{2n}{n} (2H_{2n} - H_n)
+		$
+	}
 
 \end{document} 
 
